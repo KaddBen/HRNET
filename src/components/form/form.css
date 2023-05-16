@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+.employee {
+
+}
+.modal a  {
+    color: red;
+    display:block !important;
+    opacity:unset;
+    cursor:pointer;
+}
 .title {
     display: flex;
     align-items: center;
@@ -22,6 +31,7 @@
     border: 2px solid black;
     display: flex;
     justify-content: center;
+    flex-direction:column;
     align-items: center;
     color: black;
     background-color: white !important;

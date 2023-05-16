@@ -1,7 +1,7 @@
 import { React, useState } from "react";
 import "./form.css";
-// import Modal from "../Modal/modal";
-import { Modal } from "modal-kb";
+//import Modal from "../Modal/modal";
+import Modal  from "kb-modal";
 import Input from "../input/input";
 import { addUserInfos } from "../../reducers/userInfoSlice";
 import { useDispatch } from "react-redux";
