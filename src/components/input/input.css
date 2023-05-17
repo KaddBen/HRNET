@@ -1,0 +1,23 @@
+form input {
+    padding: 0 10px;
+    width: 100%;
+    height: 3rem;
+    border-radius: 0.5rem;
+    outline: none;
+    color: black;
+    font-weight: bold;
+    font-size: 1rem;
+    border-color: rgb(164, 164, 164);
+    border-style: solid;
+    background-color: rgb(245, 245, 245);
+    opacity: 50%;
+}
+form input:hover {
+  opacity:unset;
+  background-color: white;
+  border-color: rgb(44, 211, 44);
+}
+
+form input:invalid[focused="true"] ~ span {
+    display: block ;
+}

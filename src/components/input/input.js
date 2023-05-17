@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import './input.css'
 const Input = (props) => {
   const [focused, setFocused] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");

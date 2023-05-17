@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import "./form.css";
 //import Modal from "../Modal/modal";
 import Modal  from "kb-modal";
@@ -10,6 +10,7 @@ const Form = () => {
   const dispatch = useDispatch();
   const handleSubmit = (e) => {
     e.preventDefault();
+    setIsLoading(true);
     let count = 0;
     document
       .querySelectorAll("span")
@@ -20,11 +21,8 @@ const Form = () => {
       );
     if (count === 0) {
       setIsOpen(true);
-      if (stateValue === null)
-        setStateValue(document.querySelectorAll("select")[0].value);
-      if (saleValue === null)
-        setSaleValue(document.querySelectorAll("select")[1].value);
-
+      console.log(stateValue);
+      console.log(saleValue);
       let data = {
         name: firstNameValue,
         lastname: lastNameValue,
@@ -35,24 +33,14 @@ const Form = () => {
         state: stateValue,
         department: saleValue,
       };
-      setIsLoading(true);
+      
       const storeData = () => dispatch(addUserInfos(data));
       storeData();
       setTimeout(() => setIsLoading(false), 1000);
     } 
   };
 
-  const [isOpen, setIsOpen] = useState(false);
-  const [isLoading, setIsLoading] = useState(null);
-  const [firstNameValue, setFirstNameValue] = useState("");
-  const [lastNameValue, setLastNameValue] = useState("");
-  const [birthValue, setBirthValue] = useState("");
-  const [startValue, setStartValue] = useState("");
-  const [streetValue, setStreetValue] = useState("");
-  const [cityValue, setCityValue] = useState("");
-  const [stateValue, setStateValue] = useState(null);
-  const [codeValue, setCodeValue] = useState("");
-  const [saleValue, setSaleValue] = useState(null);
+
   const states = [
     "Alabama",
     "Alaska",
@@ -114,6 +102,21 @@ const Form = () => {
     "Wisconsin",
     "Wyoming",
   ];
+  const [isOpen, setIsOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(null);
+  const [firstNameValue, setFirstNameValue] = useState("");
+  const [lastNameValue, setLastNameValue] = useState("");
+  const [birthValue, setBirthValue] = useState("");
+  const [startValue, setStartValue] = useState("");
+  const [streetValue, setStreetValue] = useState("");
+  const [cityValue, setCityValue] = useState("");
+  const [stateValue, setStateValue] = useState(null);
+  const [codeValue, setCodeValue] = useState("");
+  const [saleValue, setSaleValue] = useState(null);
+  useEffect(() => {
+    if (stateValue === null) setStateValue(document.querySelectorAll("select")[0].value);
+    if (saleValue === null )  setSaleValue(document.querySelectorAll("select")[1].value);
+  }, [stateValue, saleValue])
 
   return (
     <main>

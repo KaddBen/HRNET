@@ -1,265 +1,49 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
-.employee {
-
-}
-.modal a  {
-    color: red;
-    display:block !important;
-    opacity:unset;
-    cursor:pointer;
-}
-.title {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.modal {
-    position: fixed;
-    top: 40%;
-    right: 40%;
-    width: 15rem;
-    height: 5rem;
-    border-radius: 1rem;
-    border: 2px solid black;
-    display: flex;
-    justify-content: center;
-    flex-direction:column;
-    align-items: center;
-    color: black;
-    background-color: white !important;
-}
-.cross {
-    position:absolute;
-    top:0.6rem;
-    right:0.6rem;
-}
-
-.modal span {
-cursor:pointer;
-}
-
-.span_class {
-    display:block !important;
-    z-index:-1000;
-}
-
-.fade {
-transition: opacity 2s;
-  }
-  
-.fade.out {
-   visibility:hidden;
-   opacity:0;
-  }
-.fade.in {
-    opacity: 1;
-  }
-  .block {
-display:block !important;
-
-  }
-  .unset {
-display:unset !important;
-  }
-  .loader{
-    position: absolute !important;
-   border-radius: unset !important;
-    width: 100% !important;
-    height: 100% !important;
-    display: flex !important;
-    justify-content:center !important;
-    align-items:center !important;
-    background-color: transparent !important;
-    transition: opacity 0.75s, visibility 0.75s !important;
-   }
-   .loader::after {
-       content:"";
-       width: 25px !important;
-       height: 25px !important;
-       border: 10px solid #dddddd !important;
-       border-top-color: #0b7a21 !important;
-       border-radius:50% !important;
-       animation: loading 0.75s ease-in infinite !important;
-   }
-.loader_none {
-    width:100%;
-    height:100%;
-    background:transparent;
-}
-   @keyframes loading {
-    from {
-transform: rotate(0turn)
-    }
-    to {
-transform: rotate(1turn)
-    }
-}
-
-@keyframes fading {
-    from {
-visibility: hidden;
-    }
-    to {
-visibility:visible;
-    }
-}
-
-
-.visible {
-    visibility:visible;
-    display:block !important;
-    color:black
-}
-.hidden {
-visibility: hidden;
-position:absolute;
-left:0;
-z-index:-1000;
-}
-.modal div:not(.loader, .hidden, .visible) {
-    cursor: pointer;
-    text-align: center;
-    width: 1.8rem;
-    height: 1.5rem;
-    position: absolute;
-    border-radius: 50%;
-    background-color: black;
-    padding-top: 3px;
-    right: -5px;
-    top: -10px;
-    color: white;   
-}
-* {
-box-sizing:border-box;
-}
-main{
- padding-inline: 30%;
-}
-
-body {
-
-color: rgb(132, 135, 132);
-font-family: 'Roboto', sans-serif;
-font-weight: bold;
-}
-
-form label {
-    color: green;
-}
-
-h1 {
-    color: rgb(14, 131, 14);
-    font-size: 2.5rem;
-}
-
-h2{
-    color: black;
-}
-form input {
-    padding: 0 10px;
-    width: 100%;
-    height: 3rem;
-    border-radius: 0.5rem;
-    outline: none;
-    color: black;
-    font-weight: bold;
-    font-size: 1rem;
-    border-color: rgb(164, 164, 164);
-    border-style: solid;
-    background-color: rgb(245, 245, 245);
-    opacity: 50%;
-}
-form input:hover {
-  opacity:unset;
-  background-color: white;
-  border-color: rgb(44, 211, 44);
-}
-a {
-    text-decoration: none;
-    opacity: 50%;
-    color: rgb(44, 211, 44);
-}
-a:hover {
-  opacity: unset;
-}
-.form_container {
-    width: 100%;
-}
-
 form {
-width: 100%;
+  width: 100%;
 }
-.spinner_container {
-    position:relative !important;
-    width: 15rem !important;
-    height: 15rem !important;
-    background-color: red !important;
-    border-radius:unset !important;
-    z-index:1000 !important;
-}
-form span:not(.visible, .span_class) {
-    display: none ;
-    color: red;
-    font-size: 13px;
-    font-weight: lighter;
-    z-index:1000 !important;
-}
-form input:invalid[focused="true"] ~ span {
-    display: block ;
-}
-.root {
-    width: 50%;
-}
-
-tbody {
-background-color:black
-}
-.search_container input {
-    display:block;
-    width:10%;
-    height:2.5rem;
-    margin-inline: auto 5px
-}
-.table_container  {
-   position:relative;
-}
-
-nav select {
- position:unset;
-   position:absolute !important;
-   top:0;
-   left:0;
-   width:4rem;
-}
-nav {
-   position:unset !important;
-}
-form label {
-    display: block;
-    margin-top: 1rem;
-    margin-bottom: 10px;
-}
-
 form button {
     display: block;
     width: 7rem;
     height: 3rem;
     border-radius: 1rem;
-    color:white;
+    color: white;
     background-color: green;
-    margin:2rem auto;
-}
-
-form button:hover {
+    margin: 2rem auto;
+  }
+  form button:hover {
     opacity: 90%;
+  }
+form label {
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 10px;
+    color: green;
+  }
+form span:not(.visible, .span_class) {
+  display: none;
+  color: red;
+  font-size: 13px;
+  font-weight: lighter;
+  z-index: 1000 !important;
+}
+form select {
+  width: 100%;
+  padding: 0 10px;
+  height: 3rem;
+  border-radius: 0.5rem;
+  outline: none;
+  color: black;
+  font-weight: bold;
+  font-size: 1rem;
+  border-color: rgb(164, 164, 164);
+  border-style: solid;
+  background-color: rgb(245, 245, 245);
+  opacity: 50%;
+}
+select:hover {
+  border-color: rgb(44, 211, 44);
+  border-style: solid;
+  border-radius: 4px;
 }
 .address {
     width: 100%;
@@ -270,34 +54,15 @@ form button:hover {
     color: green;
     border-style: solid;
     border-color: rgb(183, 183, 183);
-}
-
-.address:hover {
+  }
+  .address:hover {
     border-color: rgb(44, 211, 44);
     border-style: solid;
-}
-
-.address input {
+  }
+  .address input {
     width: 100%;
+  }
+.form_container {
+  width: 100%;
 }
 
-form select {
-    width: 100%;
-    padding: 0 10px;
-    height: 3rem;
-    border-radius: 0.5rem;
-    outline: none;
-    color: black;
-    font-weight: bold;
-    font-size: 1rem;
-    border-color: rgb(164, 164, 164);
-    border-style: solid;
-    background-color: rgb(245, 245, 245);
-    opacity: 50%;
-}
-
-select:hover {
-    border-color: rgb(44, 211, 44);
-    border-style: solid;
-    border-radius: 4px;
-}
