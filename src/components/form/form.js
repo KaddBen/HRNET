@@ -1,5 +1,6 @@
 import { React, useState, useEffect } from "react";
 import "./form.css";
+import "../Modal/modal.css"
 //import Modal from "../Modal/modal";
 import Modal  from "kb-modal";
 import Input from "../input/input";
@@ -110,18 +111,18 @@ const Form = () => {
   const [startValue, setStartValue] = useState("");
   const [streetValue, setStreetValue] = useState("");
   const [cityValue, setCityValue] = useState("");
-  const [stateValue, setStateValue] = useState(null);
+  const [stateValue, setStateValue] = useState("");
   const [codeValue, setCodeValue] = useState("");
-  const [saleValue, setSaleValue] = useState(null);
+  const [saleValue, setSaleValue] = useState("");
   useEffect(() => {
-    if (stateValue === null) setStateValue(document.querySelectorAll("select")[0].value);
-    if (saleValue === null )  setSaleValue(document.querySelectorAll("select")[1].value);
+    if (stateValue === "") setStateValue(document.querySelectorAll("select")[0].value);
+    if (saleValue === "" )  setSaleValue(document.querySelectorAll("select")[1].value);
   }, [stateValue, saleValue])
 
   return (
     <main>
       <form action="#" id="create-employee">
-        <label for="first-name">First Name</label>
+        <label htmlFor="first-name">First Name</label>
         <Input
           type="text"
           id="first-name"
@@ -130,7 +131,7 @@ const Form = () => {
           value={firstNameValue}
         />
 
-        <label for="last-name">Last Name</label>
+        <label htmlFor="last-name">Last Name</label>
         <Input
           type="text"
           id="last-name"
@@ -139,7 +140,7 @@ const Form = () => {
           value={lastNameValue}
         />
 
-        <label for="date-of-birth">Date of Birth</label>
+        <label htmlFor="date-of-birth">Date of Birth</label>
         <Input
           id="date-of-birth"
           type="date"
@@ -148,7 +149,7 @@ const Form = () => {
           value={birthValue}
         />
 
-        <label for="start-date">Start Date</label>
+        <label htmlFor="start-date">Start Date</label>
         <Input
           id="start-date"
           type="date"
@@ -157,19 +158,19 @@ const Form = () => {
           value={startValue}
         />
 
-        <fieldset class="address">
+        <fieldset className="address">
           <legend>Address</legend>
 
-          <label for="street">Street</label>
+          <label htmlFor="street">Street</label>
           <Input
             id="street"
             type="text"
-            pattern="^[A-Za-z0_9]{6,16}$"
+            pattern="^[A-Za-z0_9]{3,16}$"
             onChange={(e) => setStreetValue(e.target.value)}
             value={streetValue}
           />
 
-          <label for="city">City</label>
+          <label htmlFor="city">City</label>
           <Input
             id="city"
             type="text"
@@ -178,7 +179,7 @@ const Form = () => {
             value={cityValue}
           />
 
-          <label for="state">State</label>
+          <label htmlFor="state">State</label>
           <select
             name="state"
             id="state"
@@ -194,7 +195,7 @@ const Form = () => {
             })}
           </select>
 
-          <label for="zip-code">Zip Code</label>
+          <label htmlFor="zip-code">Zip Code</label>
           <Input
             id="zip-code"
             type="number"
@@ -204,7 +205,7 @@ const Form = () => {
           />
         </fieldset>
 
-        <label for="department">Department</label>
+        <label htmlFor="department">Department</label>
         <select
           name="department"
           id="department"
