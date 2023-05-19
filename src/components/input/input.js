@@ -10,7 +10,7 @@ const Input = (props) => {
     if (props.type === "number") setErrorMsg("");
     if((props.value.length === 0) && (props.type !== "date")) setErrorMsg("Ce champ ne peut etre vide");
     if((errorMsg !== "Ce champ ne peut etre vide")) {
-      setClassName("hello");
+      setClassName("input_value");
       console.log(className);
       console.log(errorMsg);
     }

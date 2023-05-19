@@ -21,3 +21,7 @@ form input:hover {
 form input:invalid[focused="true"] ~ span {
     display: block ;
 }
+
+.input_value {
+  visibility:visible;
+}
