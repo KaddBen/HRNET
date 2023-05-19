@@ -15,11 +15,21 @@ const Form = () => {
     let count = 0;
     document
       .querySelectorAll("span")
-      .forEach((span) =>
+      .forEach((span) =>{
         window.getComputedStyle(span).display === "block"
           ? count++
           : console.log(count)
-      );
+         console.log(span.previousElementSibling.value.length)
+        if(span.previousElementSibling.value.length === 0) {
+          // eslint-disable-next-line no-unused-expressions
+          span.setAttribute("class", "block");
+          console.log("hello");
+          count++
+        }
+     
+  });
+
+      console.log(count)
     if (count === 0) {
       setIsOpen(true);
       console.log(stateValue);
@@ -118,7 +128,6 @@ const Form = () => {
     if (stateValue === "") setStateValue(document.querySelectorAll("select")[0].value);
     if (saleValue === "" )  setSaleValue(document.querySelectorAll("select")[1].value);
   }, [stateValue, saleValue])
-
   return (
     <main>
       <form action="#" id="create-employee">
@@ -126,7 +135,7 @@ const Form = () => {
         <Input
           type="text"
           id="first-name"
-          pattern="[A-Za-z0_9]{3,16}"
+          pattern="^[A-Za-z0_9]{3,16}$"
           onChange={(e) => setFirstNameValue(e.target.value)}
           value={firstNameValue}
         />

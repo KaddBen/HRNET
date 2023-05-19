@@ -25,6 +25,12 @@ h2 {
 main {
   padding-inline: 30%;
 }
+.back_home {
+  text-align:center;
+  display:block;
+  font-size:1.1rem;
+  margin-top:1rem;
+}
 .container {
   display: flex;
   flex-direction: column;
